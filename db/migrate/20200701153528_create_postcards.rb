@@ -3,7 +3,7 @@ class CreatePostcards < ActiveRecord::Migration[6.0]
     create_table :postcards do |t|
       t.string :message
       t.string :photo
-      t.user :references
+      t.references :user, foreign_key: true
 
       t.timestamps
     end
