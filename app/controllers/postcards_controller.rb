@@ -1,4 +1,6 @@
 class PostcardsController < ApplicationController
+    skip_before_action :verify_authenticity_token
+
     def index
         @postcards = Postcard.all
         render json: @postcards
